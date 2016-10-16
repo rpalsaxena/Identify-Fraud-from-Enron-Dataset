@@ -20,16 +20,13 @@ with open("final_project_dataset.pkl", "r") as data_file:
 ### Task 3: Create new feature(s)
 ### Store to my_dataset for easy export below.
 data_dict.pop("TOTAL",0)
+
 max = 0
 
 for k,v in data_dict.iteritems():
-	for key, val in v.iteritems():
-		if key == "salary":
-			if val > max and val != "NaN":
-				max = val
-				name = k
-print max
-print name
+	if len(k) > 10:
+		print k
+	
 '''
 data = featureFormat(data_dict, featurs_list)
 for point in data:
