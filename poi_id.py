@@ -19,14 +19,33 @@ with open("final_project_dataset.pkl", "r") as data_file:
 ### Task 2: Remove outliers
 ### Task 3: Create new feature(s)
 ### Store to my_dataset for easy export below.
+max =0
+name = ''
 data_dict.pop("TOTAL",0)
-
-max = 0
-
+data_dict.pop("THE TRAVEL AGENCY IN THE PARK",0)
+data_dict.pop("",0)
+s =set()
+maxy = 0
 for k,v in data_dict.iteritems():
-	if len(k) > 10:
-		print k
-	
+	maxy += 1
+	max = 0 
+	poi_false = 0
+	for keys, values in v.iteritems():
+		if keys == "poi":
+			if values == "True":
+				poi_false = 1
+			else:
+				poi_false = 0
+		
+		if values == "NaN":
+			max += 1
+	if poi_false == 0 and max > 18:
+		print k, ":"
+print s
+print len(s)
+print maxy
+#print name
+#print len(name)
 '''
 data = featureFormat(data_dict, featurs_list)
 for point in data:
