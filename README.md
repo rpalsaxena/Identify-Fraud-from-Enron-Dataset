@@ -87,4 +87,30 @@ oob_score=False, random_state=None, verbose=0,
 warm_start=False
 `
 
+> **GaussianNB** is giving best value of Precision & Recall.
 
+
+# > Algorithm Tuning
+I have used sklearn's GridSearchCV() to tune all my algorithms and tested my results using our test_classifier(). After Tuning, I am getting best results from GaussianNB classifier.
+
+Tuning an algorithm is important step because different functions and initial settings can have a effect on its performance. In some cases, such as selecting a wrong parameters for algorithms, it can reult in algorithm overfit.
+
+ 
+# > Validation Strategy
+I am using test_classifier() for testing my algorithm's precision, recall values. This function is using **StratifiedShuffleShift ** for validating our results. We have a small dataset, so validation step is an important step to check overfitting. StratifiedShuffleShift provides train/test indices to split data in train, test sets.
+
+In Validation, we test the performance of classifiers. Classifiers generally make a mistake of overfitting. Overfitting occurs when we have too many parameters but very few observations. An overfit model has poor predictive performance, as it overreacts to minor fluctuations in the training data. So, we divide data in training & testing set. We can also use *train_test_spit* but that does not shuffle the records. In *StratifiedShuffleShift* it is a merge of StratifiedKFold and ShuffleSplit algorithms. Runs K Fold times and shuffles the data.
+
+
+# > Evaluation Metrics
+Precision and Recall are two important metrics to evaluate a model. Since the dataset is small, accuracy will not be a good metric.
+Positive prediction means recognizing that the employee is POI.
+
+**Precision**: The precision is the ratio `tp / (tp + fp)` where tp is the number of true positives and fp the number of false positives. The precision is intuitively the ability of the classifier not to label as positive a sample that is negative.
+
+**Recall**: The recall is the ratio `tp / (tp + fn)` where tp is the number of true positives and fn the number of false negatives. The recall is intuitively the ability of the classifier to find all the positive samples.
+
+Here we are getting best values in case of GaussianNB:
+    Precision   |  Recall 
+----------------|-----------------
+    0.46846     |  0.33050
