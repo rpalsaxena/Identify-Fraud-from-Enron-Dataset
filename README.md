@@ -33,6 +33,8 @@ I added all the `financial_features`, `email_features` to `feature_list`. I also
 
 I used SelectKBest() to select best 6 features from this dataset. It selected `'exercised_stock_options'`, `'total_stock_value'`, `'bonus'`, `'salary'`,`'total'`, `'person_to_poi_rate'` features from the dataset.
 
+     |                           |                   
+-----|---------------------------|---------------------
 True | 'exercised_stock_options' | 24.815079733218194
 True | 'total_stock_value'       | 24.182898678566879
 True | 'bonus'                   | 20.792252047181535
