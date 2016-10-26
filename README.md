@@ -110,6 +110,7 @@ Here positive prediction is recognizing the person as POI
 **Precision**: The precision is the ratio `tp / (tp + fp)` where tp is the number of true positives and fp the number of false positives. The precision is intuitively the ability of the classifier not to label as positive a sample that is negative.
 
 Precision is the ratio of "no. of records with positive POI predictions who were actually POI" and "the total no. of records with positive POI predictions"
+
 \frac{no. of persons predicted to be POI & were actually POI }{dafladsf} 
 
 **Recall**: The recall is the ratio `tp / (tp + fn)` where tp is the number of true positives and fn the number of false negatives. The recall is intuitively the ability of the classifier to find all the positive samples.
