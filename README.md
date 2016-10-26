@@ -117,7 +117,7 @@ Precision = `no. of persons predicted to be POI & were actually POI` / `Total no
 
 Recall is the ratio of "no. of records which are predicted to be POI and who are actually POI ( true positives)" **and ** "no. of records which are predicted to be POI and who are actually POI **+** no. of records which were actually POI but predicted Non-POI"
 
-Recall = `no. of persons predicted to be POI & were actually POI` / (`no. of persons predicted to be POI & were actually POI` + `no. of persons perdicted to be NON-POI but they were actually POI`
+Recall = `no. of persons predicted to be POI & were actually POI` / (`no. of persons predicted to be POI & were actually POI` + `no. of persons perdicted to be NON-POI but they were actually POI`)
 
 Here we are getting best values in case of GaussianNB:
 
