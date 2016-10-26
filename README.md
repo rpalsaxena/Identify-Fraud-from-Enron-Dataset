@@ -6,4 +6,20 @@ In the resulting Federal investigation, a significant amount of typically confid
 including tens of thousands of emails and detailed financial data for top executives.
 In this project, I am building a person of interest identifier based on financial and email data made public as a result of the Enron scandal.
 
+
 # > Goal of this project
+I am trying to build a predictive model that can identify _Persons of Interest_  based on the features of Enron Dataset. 
+This model can also be used to investigate frauds at other companies.
+
+It contains 146 records with 21 features/ attributes.
+
+I found 3 outliers in this dataset, removed them by using pop().
+`data_dict.pop("TOTAL",0)` , `data_dict.pop("THE TRAVEL AGENCY IN THE PARK",0)` : These two values can not be considered as the names of person. So, it is a wrong value in dataset and can be considered as outliers.
+
+`data_dict.pop("LOCKHART EUGENE E",0)`: This value be considered as name of a person but it didn't contain any values in its features set. All features have 'NaN' values and "poi" feature is also `False`. Its an empty record in our data. So, this can also be considered as an outlier.
+
+# > Feature Selection, Scaling
+
+
+
+After visualizing the dataset as a scatter plot, I identified an outlier named TOTAL. This is a spreadsheet artifact and it was thus removed.
