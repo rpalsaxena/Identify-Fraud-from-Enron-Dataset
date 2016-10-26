@@ -19,7 +19,3 @@ I found 3 outliers in this dataset, removed them by using pop().
 `data_dict.pop("LOCKHART EUGENE E",0)`: This value be considered as name of a person but it didn't contain any values in its features set. All features have 'NaN' values and "poi" feature is also `False`. Its an empty record in our data. So, this can also be considered as an outlier.
 
 # > Feature Selection, Scaling
-
-
-
-After visualizing the dataset as a scatter plot, I identified an outlier named TOTAL. This is a spreadsheet artifact and it was thus removed.
