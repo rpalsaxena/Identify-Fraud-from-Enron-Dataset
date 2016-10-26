@@ -93,7 +93,7 @@ warm_start=False
 # > Algorithm Tuning
 I have used sklearn's GridSearchCV() to tune all my algorithms and tested my results using our test_classifier(). After Tuning, I am getting best results from GaussianNB classifier.
 
-Tuning an algorithm is important step because different functions and initial settings can have a effect on its performance. In some cases, such as selecting a wrong parameters for algorithms, it can reult in algorithm overfit.
+Tuning an algorithm is an important step because different functions and initial settings can have an effect on its performance. In some cases, such as selecting a wrong parameters for algorithms, it can reult in algorithm overfit.
 
  
 # > Validation Strategy
