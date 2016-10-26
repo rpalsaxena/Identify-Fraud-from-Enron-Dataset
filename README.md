@@ -87,7 +87,7 @@ oob_score=False, random_state=None, verbose=0,
 warm_start=False
 `
 
-> **GaussianNB** is giving best value of Precision & Recall.
+> **GaussianNB** is giving best value of Precision & Recall i.e `> 0.3`.
 
 
 # > Algorithm Tuning
