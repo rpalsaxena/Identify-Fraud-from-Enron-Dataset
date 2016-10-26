@@ -31,9 +31,9 @@ I added all the `financial_features`, `email_features` to `feature_list`. I also
 * `person_to_poi_rate` : Ratio of no. of emails sent to POI and total no. of emails sent.
 * `total`              : Sum of all the financial features for each record.
 
-I used SelectKBest() to select best 6 features from this dataset. It selected `'exercised_stock_options'`, `'total_stock_value'`, `'bonus'`, `'salary'`,`'total'`, `'person_to_poi_rate'` features from the dataset.
+I used SelectKBest() to select best features from this dataset. It selected `'exercised_stock_options'`, `'total_stock_value'`, `'bonus'`, `'salary'`,`'total'`, `'person_to_poi_rate'` features from the dataset. 
 
-     |   Features                |  Scores                 
+Sel. |   Features                |  Scores                 
 -----|---------------------------|---------------------
 True | 'exercised_stock_options' | 24.815079733218194
 True | 'total_stock_value'       | 24.182898678566879
@@ -58,7 +58,13 @@ False| 'deferral_payments'       | 0.22461127473600989
 False| 'from_messages'           | 0.16970094762175533
 False| 'restricted_stock_deferred| 0.065499652909942141
 
-I have used MinMaxScaler to scale all the feature values in a range of [0-1]. It helps to avoid problems caused by different units in the data. Helps in maintaining consistency among values range.
+I selected only 6 features as from above table it is visible that after 'person_to_poi_rate' feature score value significantly drops.
+
+**Feature Scaling**
+
+Feature Scaling is helpful only in case of SVM and K-Means as in those 2 we consider Euclidean distance. 
+
+Due to this reason I have apllied MinMaxScaler only in case of SVM to scale all the feature values in a range of [0-1]. Scaling helps to avoid problems caused by different units in the data. It helps in maintaining consistency among values range.
 
 # > Algorithm Selection
 
