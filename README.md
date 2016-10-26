@@ -65,7 +65,7 @@ I tested my GausianNB() with all features(`'poi'` , `'exercised_stock_options'`,
 
 But after removing `'person_to_poi_rate'` from feature_list & changing it to `['poi', 'exercised_stock_options', 'total_stock_value', 'bonus', 'salary', 'total']`, I got these results- `Accuracy: 0.86073	Precision: 0.46846	Recall: 0.33050	F1: 0.38757	F2: 0.35118`
 
-This is exactly similar to the one including `'person_to_poi_rate'`. So, it means for this feature algo is neither increasing not decreasing the performance of our GausianNB() algo, so we can remove this feature from our feature list in our final analysis, it will decrease run time of algo.
+This is exactly similar to the one including `'person_to_poi_rate'`. So, it means for this feature algo is neither increasing not decreasing the performance of our GausianNB() algo, so we can remove this feature from our feature list in our final analysis, it may improve the run time of algo.
 
 
 **Feature Scaling**
