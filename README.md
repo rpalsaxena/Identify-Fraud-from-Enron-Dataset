@@ -104,7 +104,6 @@ In Validation, we test the performance of classifiers. Classifiers generally mak
 
 # > Evaluation Metrics
 Precision and Recall are two important metrics to evaluate a model. Since the dataset is small, accuracy will not be a good metric.
-Positive prediction means recognizing that the employee is POI.
 
 **Precision**: The precision is the ratio `tp / (tp + fp)` where tp is the number of true positives and fp the number of false positives. The precision is intuitively the ability of the classifier not to label as positive a sample that is negative.
 
