@@ -48,9 +48,40 @@ I tested my dataset on 5 different algorithms, used GridSearchCV() for tuning my
 `Accuracy: 0.86573	Precision: 0.48643	Recall: 0.12550	F1: 0.19952	F2: 0.14737`
 
 Best parameters : 
-`
-class_weight=None, criterion='entropy', max_depth=2,
+
+`class_weight=None, criterion='entropy', max_depth=2,
 max_features=None, max_leaf_nodes=10, min_samples_leaf=1,
 min_samples_split=20, min_weight_fraction_leaf=0.0,
 presort=False, random_state=None, splitter='random'
 `
+**Support Vector Machine :**
+
+`Got a divide by zero when trying out. Precision or recall may be undefined due to a lack of true positive predicitons.
+`
+
+This algo didn't work well here. Its showing precision , recall undefined due to lack of positive predictions.
+
+**AdaBoost :**
+
+`Accuracy: 0.84847	Precision: 0.19734	Recall: 0.04450	F1: 0.07262	F2: 0.05266`
+
+Best parameters :
+
+`
+algorithm='SAMME', base_estimator=None, learning_rate=5.0,
+n_estimators=5, random_state=None
+`
+
+**RandomForest :**
+
+`Accuracy: 0.84927	Precision: 0.37391	Recall: 0.19350	F1: 0.25502	F2: 0.21417`
+
+Best parameters :
+
+`bootstrap=True, class_weight=None, criterion='entropy',
+max_depth=None, max_features='auto', max_leaf_nodes=10,
+min_samples_leaf=1, min_samples_split=2,
+min_weight_fraction_leaf=0.0, n_estimators=10, n_jobs=1,
+oob_score=False, random_state=None, verbose=0,
+warm_start=False
+'
