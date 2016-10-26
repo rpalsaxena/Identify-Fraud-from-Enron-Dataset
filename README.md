@@ -113,11 +113,14 @@ Precision is the ratio of "no. of records with positive POI predictions who were
 
 \frac{no. of persons predicted to be POI & were actually POI }{dafladsf} 
 
+
 **Recall**: The recall is the ratio `tp / (tp + fn)` where tp is the number of true positives and fn the number of false negatives. The recall is intuitively the ability of the classifier to find all the positive samples.
 
 Recall is the ratio of "no. of records which are predicted to be POI and who are actually POI ( true positives)" **and ** "no. of records which are predicted to be POI and who are actually POI **+** no. of records which were actually POI but predicted Non-POI"
 
-
+\begin{equation}
+  a^2+b^2=c^2
+\end{equation}
 
 Here we are getting best values in case of GaussianNB:
 
