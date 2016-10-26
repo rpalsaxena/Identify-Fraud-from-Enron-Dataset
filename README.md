@@ -36,7 +36,21 @@ I used SelectKBest() to select best 6 features from this dataset. It selected `'
 I have used MinMaxScaler to scale all the feature values in a range of [0-1]. It helps to avoid problems caused by different units in the data. Helps in maintaining consistency among values range.
 
 # > Algorithm Selection
+
 I tested my dataset on 5 different algorithms, used GridSearchCV() for tuning my algorithm's parameters.
 
-**GaussianNB**:
+**GaussianNB :**
+
 `Accuracy: 0.86073	Precision: 0.46846	Recall: 0.33050	F1: 0.38757	F2: 0.35118`
+
+**Decision Tree :**
+
+`Accuracy: 0.86573	Precision: 0.48643	Recall: 0.12550	F1: 0.19952	F2: 0.14737`
+
+Best parameters : 
+`
+class_weight=None, criterion='entropy', max_depth=2,
+max_features=None, max_leaf_nodes=10, min_samples_leaf=1,
+min_samples_split=20, min_weight_fraction_leaf=0.0,
+presort=False, random_state=None, splitter='random'
+`
