@@ -1,0 +1,41 @@
+
+GaussianNB:
+GaussianNB()
+	Accuracy: 0.86073	Precision: 0.46846	Recall: 0.33050	F1: 0.38757	F2: 0.35118
+	Total predictions: 15000	True positives:  661	False positives:  750	False negatives: 1339	True negatives: 12250
+
+
+Decision Tree:
+DecisionTreeClassifier(class_weight=None, criterion='gini', max_depth=None,
+            max_features=None, max_leaf_nodes=5, min_samples_leaf=1,
+            min_samples_split=5, min_weight_fraction_leaf=0.0,
+            presort=False, random_state=None, splitter='random')
+	Accuracy: 0.86640	Precision: 0.49700	Recall: 0.16550	F1: 0.24831	F2: 0.19098
+	Total predictions: 15000	True positives:  331	False positives:  335	False negatives: 1669	True negatives: 12665
+
+
+SVM:
+Got a divide by zero when trying out: SVC(C=0.001, cache_size=200, class_weight=None, coef0=0.0,
+  decision_function_shape=None, degree=3, gamma=0.001, kernel='rbf',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)
+Precision or recall may be undefined due to a lack of true positive predicitons.
+
+AdaBoost:
+AdaBoostClassifier(algorithm='SAMME', base_estimator=None, learning_rate=5.0,
+          n_estimators=5, random_state=None)
+	Accuracy: 0.84860	Precision: 0.19822	Recall: 0.04450	F1: 0.07268	F2: 0.05267
+	Total predictions: 15000	True positives:   89	False positives:  360	False negatives: 1911	True negatives: 12640
+
+
+RandomForest
+
+RandomForestClassifier(bootstrap=True, class_weight=None, criterion='gini',
+            max_depth=None, max_features='auto', max_leaf_nodes=5,
+            min_samples_leaf=1, min_samples_split=2,
+            min_weight_fraction_leaf=0.0, n_estimators=5, n_jobs=1,
+            oob_score=False, random_state=None, verbose=0,
+            warm_start=False)
+	Accuracy: 0.86200	Precision: 0.45721	Recall: 0.18700	F1: 0.26544	F2: 0.21207
+	Total predictions: 15000	True positives:  374	False positives:  444	False negatives: 1626	True negatives: 12556
+
