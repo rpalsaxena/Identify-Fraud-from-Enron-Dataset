@@ -33,6 +33,29 @@ I added all the `financial_features`, `email_features` to `feature_list`. I also
 
 I used SelectKBest() to select best 6 features from this dataset. It selected `'exercised_stock_options'`, `'total_stock_value'`, `'bonus'`, `'salary'`,`'total'`, `'person_to_poi_rate'` features from the dataset.
 
+True | 'exercised_stock_options' | 24.815079733218194
+True | 'total_stock_value'       | 24.182898678566879
+True | 'bonus'                   | 20.792252047181535
+True | 'salary'                  | 18.289684043404513
+True | 'total'                   | 16.989336421752615
+True | 'person_to_poi_rate'      | 16.409712548035792
+False| 'deferred_income'         | 11.458476579280369
+False| 'long_term_incentive'     | 9.9221860131898225
+False| 'restricted_stock'        | 9.2128106219771002
+False| 'total_payments'          | 8.7727777300916756
+False| 'shared_receipt_with_poi' | 8.589420731682381
+False| 'loan_advances'           | 7.1840556582887247
+False| 'expenses'                | 6.0941733106389453
+False| 'from_poi_to_this_person' | 5.2434497133749582
+False| 'other'                   | 4.1874775069953749
+False| 'poi_to_person_rate'      | 3.1280917481567192
+False| 'from_this_person_to_poi' | 2.3826121082276739
+False| 'director_fees'           | 2.1263278020077054
+False| 'to_messages'             | 1.6463411294420076
+False| 'deferral_payments'       | 0.22461127473600989
+False| 'from_messages'           | 0.16970094762175533
+False| 'restricted_stock_deferred| 0.065499652909942141
+
 I have used MinMaxScaler to scale all the feature values in a range of [0-1]. It helps to avoid problems caused by different units in the data. Helps in maintaining consistency among values range.
 
 # > Algorithm Selection
@@ -56,6 +79,7 @@ presort=False, random_state=None, splitter='random'
 `
 **Support Vector Machine :**
 
+Here we have done scaling of parameters using MinMaxScaler()
 `Got a divide by zero when trying out. Precision or recall may be undefined due to a lack of true positive predicitons.
 `
 
