@@ -44,7 +44,8 @@ with open("final_project_dataset.pkl", "r") as data_file:
 ### Task 2: Remove outliers
 data_dict.pop("TOTAL",0)
 data_dict.pop("THE TRAVEL AGENCY IN THE PARK",0)
-	
+data_dict.pop("TOTAL",0)	
+data_dict.pop("LOCKHART EUGENE E",0)
 
 my_dataset = data_dict
 
@@ -74,20 +75,18 @@ features_list.append("total")
 data = featureFormat(my_dataset, features_list, sort_keys = True)
 labels, features = targetFeatureSplit(data)
 
-scaler = MinMaxScaler()
-features = scaler.fit_transform(features)
 
 # K-best features
 kbest = SelectKBest(k = 6)
 kbest.fit(features, labels)
 f_list = zip(kbest.get_support(), features_list[1:], kbest.scores_)
 f_list = sorted(f_list, key=lambda x: x[2], reverse = True)
-'''
+
 import pprint
 print "K-best features:", 
 pprint.pprint(f_list)
 #Output shows that 'exercised_stock_options', 'total_stock_value', 'bonus', 'salary','total', 'person_to_poi_rate' are the best 5 features of this dataset
-'''
+
 #updated feature list
 features_list = ['poi', 'exercised_stock_options', \
 				'total_stock_value', 'bonus', \
@@ -124,6 +123,12 @@ algo.fit(feature_train, labels_train)
 test_classifier(algo.best_estimator_, my_dataset, features_list)
 
 
+# Testing the response of classifier without using 'person_to_poi_rate' feature in our features_list
+print "\n Testing of classifer by removing 'person_to_poi_rate' feature from our features_list"
+test_classifier(algo.best_estimator_, my_dataset, ['poi', \
+				'exercised_stock_options', 'total_stock_value', \
+				'bonus', 'salary', 'total'] )
+				
 #Decision Tree
 print '\nDecision Tree:'
 dt_clf = tree.DecisionTreeClassifier()
@@ -133,18 +138,6 @@ parameters = {'criterion': ['gini', 'entropy'], \
 			'splitter': ['random', 'best'], \
 			'max_leaf_nodes': [None, 5, 10, 20]   }
 algo = GridSearchCV(dt_clf, parameters)	
-algo.fit(feature_train, labels_train)
-test_classifier(algo.best_estimator_, my_dataset, features_list)
-
-
-###SVC
-print '\nSVM:'
-svc_clf=SVC()
-parameters = {'C': [0.001, 0.01, 0.1, 1, 10], \
-			'kernel': ['rbf', 'linear', 'poly'], \
-			'gamma': [0.001, 0.01, 0.1, 1], \
-			'max_iter': [-1, 5, 10, 50]   }
-algo = GridSearchCV(svc_clf, parameters)
 algo.fit(feature_train, labels_train)
 test_classifier(algo.best_estimator_, my_dataset, features_list)
 
@@ -172,6 +165,25 @@ algo.fit(feature_train, labels_train)
 test_classifier(algo.best_estimator_, my_dataset, features_list)
 
 
+###SVC
+
+scaler = MinMaxScaler()
+features = scaler.fit_transform(features)
+
+feature_train, feature_test, labels_train, labels_test = \
+	train_test_split( features, labels, test_size=0.3, random_state=42)	
+
+print '\nSVM:'
+svc_clf=SVC()
+parameters = {'C': [0.001, 0.01, 0.1, 1, 10], \
+			'kernel': ['rbf', 'linear', 'poly'], \
+			'gamma': [0.001, 0.01, 0.1, 1] }
+algo = GridSearchCV(svc_clf, parameters)
+algo.fit(feature_train, labels_train)
+test_classifier(algo.best_estimator_, my_dataset, features_list)
+
+
+
 
 ### Task 6: Dump your classifier, dataset, and features_list so anyone can
 ### check your results. You do not need to change anything below, but make sure
@@ -179,7 +191,9 @@ test_classifier(algo.best_estimator_, my_dataset, features_list)
 ### generates the necessary .pkl files for validating your results.
 
 clf = gnb_clf
-dump_classifier_and_data(clf, my_dataset, features_list)
+dump_classifier_and_data(clf, my_dataset, ['poi', \
+				'exercised_stock_options', 'total_stock_value', \
+				'bonus', 'salary', 'total'])
 
 
-sys.stdout.close()
+sys.stdout.close()	
