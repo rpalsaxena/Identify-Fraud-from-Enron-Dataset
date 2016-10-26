@@ -105,9 +105,18 @@ In Validation, we test the performance of classifiers. Classifiers generally mak
 # > Evaluation Metrics
 Precision and Recall are two important metrics to evaluate a model. Since the dataset is small, accuracy will not be a good metric.
 
+Here positive prediction is recognizing the person as POI
+
 **Precision**: The precision is the ratio `tp / (tp + fp)` where tp is the number of true positives and fp the number of false positives. The precision is intuitively the ability of the classifier not to label as positive a sample that is negative.
 
+Precision is the ratio of "no. of records with positive POI predictions who were actually POI" and "the total no. of records with positive POI predictions"
+\frac{no. of persons predicted to be POI & were actually POI }{dafladsf} 
+
 **Recall**: The recall is the ratio `tp / (tp + fn)` where tp is the number of true positives and fn the number of false negatives. The recall is intuitively the ability of the classifier to find all the positive samples.
+
+Recall is the ratio of "no. of records which are predicted to be POI and who are actually POI ( true positives)" **and ** "no. of records which are predicted to be POI and who are actually POI **+** no. of records which were actually POI but predicted Non-POI"
+
+
 
 Here we are getting best values in case of GaussianNB:
 
