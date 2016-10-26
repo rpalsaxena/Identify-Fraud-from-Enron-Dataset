@@ -111,6 +111,8 @@ Positive prediction means recognizing that the employee is POI.
 **Recall**: The recall is the ratio `tp / (tp + fn)` where tp is the number of true positives and fn the number of false negatives. The recall is intuitively the ability of the classifier to find all the positive samples.
 
 Here we are getting best values in case of GaussianNB:
+
+
     Precision   |  Recall 
 ----------------|-----------------
     0.46846     |  0.33050
